@@ -1,0 +1,27 @@
+.quizBox {
+  width: 50rem;
+  height: 500px;
+  margin-top: 50px auto;
+  border: 1px solid black;
+}
+.questionBox {
+  width: 49rem;
+  height: 50px;
+  background-color: white;
+  margin-top: 50px auto;
+}
+.h1Style {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.questionnaire {
+  width: 49rem;
+  height: 385px;
+  background-color: white;
+}
+.questionBoxFooter,
+.questionNumber {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
