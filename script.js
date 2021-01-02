@@ -181,7 +181,5 @@ function countIncrement() {
 }
 
 function finishMessage() {
-  alert(
-    `Congratulation, You have answered all the ${questions.length} questions`
-  );
+  alert(`Congratulation, You have scored ${score}/${questions.length} marks`);
 }
