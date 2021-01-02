@@ -47,10 +47,11 @@ const questions = [
   },
 ];
 
-let count;
+let count = 0;
 let score = 0;
 let savedAnswer = " ";
 let correctAnswer;
+let progressScore = 100 / questions.length;
 
 document.querySelector(
   ".quizBox"
@@ -85,6 +86,16 @@ function loadQuestions(abc) {
   footerArea.innerHTML = null;
 
   count = abc;
+  document.querySelector(
+    ".progress"
+  ).innerHTML = `<div class="progress-bar" role="progressbar" style="width: ${(
+    progressScore *
+    (count + 1)
+  ).toFixed(2)}%;" 
+  aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${(
+    progressScore *
+    (count + 1)
+  ).toFixed(2)}%</div>`;
 
   for (let i = 0; i < questions[count].options.length; i++) {
     const radioButtons = document.createElement("input");
@@ -174,6 +185,7 @@ function loadQuestions(abc) {
 saveBtn.addEventListener("click", function () {
   if (savedAnswer === correctAnswer) score++;
   console.log(score);
+  progressBarReport();
 });
 function countIncrement() {
   count++;
